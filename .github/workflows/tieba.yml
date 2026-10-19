@@ -14,11 +14,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Set up JDK 1.8
-      uses: actions/setup-java@v1
+      uses: actions/setup-java@v5
       with:
-        java-version: 1.8
+        distribution: 'temurin' # v5 版本必须指定发行版
+        java-version: '8'       # 使用 '8' 比 '1.8' 更标准
     - name: Cache local Maven repository
       uses: actions/cache@v4
       with:
